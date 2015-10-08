@@ -68,8 +68,8 @@ The meat of the installation is taken care of by a CoreOS tool called **cloud co
     521221 -rwxr-xr-x 1 root root 2.0M Aug 23 02:43 setup-network-environment
     521219 -rwxr-xr-x 1 root root  164 Aug 23 02:43 wupiao
     ~~~
-
-	7. You can now start using the **kubectl** client
+    
+    7. You can now start using the **kubectl** client
 
 4. Bootstrap the first Node server
     1. Using coreos-2 VM boot off the ISO image

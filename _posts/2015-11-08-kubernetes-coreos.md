@@ -1,41 +1,57 @@
 ---
 layout: post
 title: CoreOS w/ Kubernetes Install Guide for VirtualBox
-categories: [containers, tech]
-tags: [kubernetes, coreos]
-description: How install Kubernetes on CoreOS
+categories: 
+  - containers
+  - tech
+tags: 
+  - kubernetes
+  - coreos
+description: How install Kubernetes on CoreOS.
 comments: true
+published: true
 ---
 
-This guide shows you how to bootstrap a Kubernetes cluster on CoreOS using a VirtualBox.
+
+This guide will introduce you to bootstraping a Kubernetes cluster on CoreOS with VirtualBox.
  
 Requires 4 VM Instances:
-1x - Kubernetes Master
-3x - Kubernetes Nodes
+- 1x Kubernetes Master
+- 3x Kubernetes Nodes
+
+The meat of the installation is taken care of by a CoreOS tool called **cloud config**.
+
+**Cloud config** is a configuration tool similar to cloud-init or a very basic implementation of a config mgmt tool.  Where all the post install configurations are defined in a yaml file. The cloud config files used in this guide will setup networking, download and install kubernetes, configure etcd, set the ssh public key for the user 'core', and set the default password for the user 'core' to 'L1nux1'.
  
-The meat of the installation is taken care of by a CoreOS tool called 'cloud config'. Basically it is a configuration tool similar to cloud-init or a very basic implementation of SaltStack.  Where all the post install configrations are defined in a yaml file. The cloud config files used in this guide will setup networking, download and install kubernetes, configure etcd, set the ssh public key for the user 'core', and set the default password for the user 'core' to 'L1nux1'.
+Create 4 instances with the following specs:
+(named 'coreos-x' where x is a number between 1-4)
+
+- 1GB or more of RAM (CoreOS ISO won't boot if less than 1GB RAM assigned)
+- x1 or more vCPU's
+- x1 HD with 8GB's or more
+- x2 NICS, One set as host-only (For internal/private cluster communication) and the other set as NAT (For internet access)
+
  
-Create 4 VM's with the following specs…
-Name them 'coreos-x' where x is a number between 1-4
-1GB or more of RAM (CoreOS ISO won't boot if less than 1GB RAM assigned)
-x1 or more vCPU's
-x1 HD with 8GB's or more
-x2 NICS, One set as host-only (For internal/private cluster communication) and the other set as NAT (For internet access)
-NAT can have any network address just make sure DHCP is on
-host-only network info must be as follows (Don't skip this step or the cluster scripts will fail):
-Network Address: 192.168.122.0
-Subnet Address: 255.255.255.0
-Default Gateway: 192.168.122.1
-Download the CoreOS ISO
- https://coreos.com/os/docs/latest/booting-with-iso.html
-Bootstrap a Master server
-Using coreos-1 VM boot off the ISO image
-Download the Master server cloud config yaml file off a webserver (I used github gist)
-sudo wget -O cloud-config.yaml http://git.io/vswiF
-Verify your cloud config yaml is valid
-sudo coreos-cloudinit -validate --from-file cloud-config.yaml
-Start the CoreOS install
-sudo coreos-install -d /dev/sda -c cloud-config.yml
+ > Note: NAT can have any network address just make sure DHCP is on
+
+
+Host-only network info must be as follows (Don't skip this step or the cluster scripts will fail):
+  - Network Address: 192.168.122.0
+  - Subnet Address: 255.255.255.0
+  - Default Gateway: 192.168.122.1
+
+Download the CoreOS ISO <https://coreos.com/os/docs/latest/booting-with-iso.html>
+
+Bootstrap a Master server:
+1. Using coreos-1 VM boot off the ISO image
+2. Download the Master server cloud config yaml file off a webserver (I used github gist)
+3. sudo wget -O cloud-config.yaml http://git.io/vswiF
+4. Verify your cloud config yaml is valid
+5. sudo coreos-cloudinit -validate --from-file cloud-config.yaml
+6. Start the CoreOS install
+
+	sudo coreos-install -d /dev/sda -c cloud-config.yml
+
 Shutdown the VM and remove/detach the CD drive
 Startup the VM after about 5-10 minutes Kubernetes Master will have been bootsrapped and you should see the following files in /opt/bin
       core@master ~ $ ls -ailh /opt/bin/
@@ -125,32 +141,14 @@ try the below to view joined nodes on the master:
       10.0.2.10   kubernetes.io/hostname=10.0.2.10   Ready
       10.0.2.11   kubernetes.io/hostname=10.0.2.11   Ready
 
-Resources Used For This Guide:
 
-My cloud config gist:
-https://gist.github.com/ryancurrah/adb533cc1099c8774670
- 
-Intro to Kubernetes:
-https://www.digitalocean.com/community/tutorials/an-introduction-to-kubernetes
- 
-Cloud Config Docs:
-https://coreos.com/os/docs/latest/cloud-config.html
- 
-Install CoreOS to Disk Docs:
-https://coreos.com/os/docs/latest/installing-to-disk.html
- 
-CoreOS ISO Image:
-https://coreos.com/os/docs/latest/booting-with-iso.html
- 
-Setting route scope for private NIC to 'link':
-http://www.freedesktop.org/software/systemd/man/systemd.network.html
-
-CoreOS Bare Metal Install Docs
-http://stevieholdway.tumblr.com/post/90167512059/coreos-bare-metal-iso-install-tutorial
- 
-Systemd Replacement Unit Fles:
-https://wiki.archlinux.org/index.php/Systemd#Replacement_unit_files
- 
-Kubernetes CoreOS Docs:
-https://github.com/kubernetes/kubernetes/blob/master/docs/getting-started-guides/coreos/coreos_multinode_cluster.md
-
+Sources:
+- My cloud config gist <https://gist.github.com/ryancurrah/adb533cc1099c8774670>
+- Intro to Kubernetes <https://www.digitalocean.com/community/tutorials/an-introduction-to-kubernetes>
+- Cloud Config Docs <https://coreos.com/os/docs/latest/cloud-config.html>
+- Install CoreOS to Disk Docs <https://coreos.com/os/docs/latest/installing-to-disk.html>
+- CoreOS ISO Image <https://coreos.com/os/docs/latest/booting-with-iso.html>
+- Setting route scope for private NIC to 'link' <http://www.freedesktop.org/software/systemd/man/systemd.network.html>
+- CoreOS Bare Metal Install Docs <http://stevieholdway.tumblr.com/post/90167512059/coreos-bare-metal-iso-install-tutorial>
+- Systemd Replacement Unit Fles <https://wiki.archlinux.org/index.php/Systemd#Replacement_unit_files>
+- Kubernetes CoreOS Docs <https://github.com/kubernetes/kubernetes/blob/master/docs/getting-started-guides/coreos/coreos_multinode_cluster.md>

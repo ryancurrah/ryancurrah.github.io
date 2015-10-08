@@ -12,6 +12,7 @@ comments: true
 published: true
 ---
 
+
 ##This guide will introduce you to bootstrapping a Kubernetes cluster on CoreOS with VirtualBox.
  
 Requires 4 VM Instances
@@ -54,7 +55,7 @@ The meat of the installation is taken care of by a CoreOS tool called **cloud co
 	5. Shutdown the VM and remove/detach the CD drive
     6. Startup the VM after about 5-10 minutes Kubernetes Master will have been bootstrapped and you should see the following files in /opt/bin
 
-  ```
+  ~~~shell
   core@master ~ $ ls -ailh /opt/bin
   total 109M
   521218 drwxr-xr-x 2 root root 4.0K Aug 23 02:45 .
@@ -66,7 +67,7 @@ The meat of the installation is taken care of by a CoreOS tool called **cloud co
   521225 -rwxr-xr-x 1 root root  20M Aug 23 02:45 kubectl
   521221 -rwxr-xr-x 1 root root 2.0M Aug 23 02:43 setup-network-environment
   521219 -rwxr-xr-x 1 root root  164 Aug 23 02:43 wupiao
-  ```
+  ~~~
 
 	7. You can now start using the **kubectl** client
 

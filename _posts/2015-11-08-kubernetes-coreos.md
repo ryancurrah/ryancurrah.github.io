@@ -55,7 +55,7 @@ The meat of the installation is taken care of by a CoreOS tool called **cloud co
 	5. Shutdown the VM and remove/detach the CD drive
     6. Startup the VM after about 5-10 minutes Kubernetes Master will have been bootstrapped and you should see the following files in /opt/bin
 
-  ~~~ shell
+  ~~~
   core@master ~ $ ls -ailh /opt/bin
   total 109M
   521218 drwxr-xr-x 2 root root 4.0K Aug 23 02:45 .

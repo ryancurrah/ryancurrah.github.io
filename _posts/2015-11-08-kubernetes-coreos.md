@@ -27,11 +27,11 @@ Download the CoreOS ISO <https://coreos.com/os/docs/latest/booting-with-iso.html
 
 Create 4 VMs with the following instructions
 
-    - Name them 'coreos-x' where x is a number between 1-4)
-    - 1GB or more of RAM (CoreOS ISO won't boot if less than 1GB RAM assigned)
-    - x1 or more vCPU's
-    - x1 HD with 8GB's or more
-    - x2 NICS, One set as host-only (For internal/private cluster communication) and the other set as NAT (For internet access)
+  - Name them 'coreos-x' where x is a number between 1-4)
+  - 1GB or more of RAM (CoreOS ISO won't boot if less than 1GB RAM assigned)
+  - x1 or more vCPU's
+  - x1 HD with 8GB's or more
+  - x2 NICS, One set as host-only (For internal/private cluster communication) and the other set as NAT (For internet access)
 
 
 > Note: 

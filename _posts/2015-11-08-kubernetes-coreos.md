@@ -12,8 +12,6 @@ comments: true
 published: true
 ---
 
-
-
 ## This guide will introduce you to bootstrapping a Kubernetes cluster on CoreOS with VirtualBox.
 
 Requires 4 VM Instances
@@ -57,14 +55,14 @@ sudo wget -O cloud-config.yaml http://git.io/vswiF
 
 
 Verify your cloud config yaml is valid
-    
+
 {% highlight bash %}
 sudo coreos-cloudinit -validate --from-file cloud-config.yaml
 {% endhighlight %}
-    
-    
+
+
 Start the CoreOS install
-    
+
 {% highlight bash %}
 sudo coreos-install -d /dev/sda -c cloud-config.yml
 {% endhighlight %}
@@ -147,6 +145,8 @@ Download the Node server cloud config yaml file off a webserver (I used github g
     
 {% highlight bash %}
 sudo wget -O cloud-config.yaml http://git.io/vswQZ
+{% endhighlight %}
+
 
 Verify your cloud config yaml is valid
     

@@ -21,7 +21,7 @@ Requires 4 VM Instances
 
 The meat of the installation is taken care of by a CoreOS tool called **cloud config**.
 
-**Cloud config** is a configuration tool similar to cloud-init or a very basic implementation of a config mgmt tool.  Where all the post install configurations are defined in a yaml file. The cloud config files used in this guide will setup networking, download and install kubernetes, configure etcd, set the ssh public key for the user 'core', and set the default password for the user 'core' to 'coreos'.
+**Cloud config** is a configuration tool similar to cloud-init or a very basic implementation of a config mgmt tool.  It's what does the post install configurations that are defined in a yaml file. The cloud config files used in this guide will setup networking, configure etcd, set the ssh public key for the user 'core', and set the default password for the user 'core' to 'coreos', and install kubernetes.
 
 Download the CoreOS ISO <https://coreos.com/os/docs/latest/booting-with-iso.html>
 
@@ -37,7 +37,7 @@ Create 4 VMs with the following instructions
 > Note: 
 > NAT can have any network address just make sure DHCP is on
 
-Host-only network info must be as follows:
+Host-only network info must be as follows
 
 - **Network Address** 192.168.122.0
 - **Subnet Address** 255.255.255.0

@@ -23,7 +23,7 @@ defaults:
     scope:
       path: "" # empty string for all files
     values:
-      title: ryancurrah
+      title: Ryan Currah
 
 description: DevOps Engineering Blog
 

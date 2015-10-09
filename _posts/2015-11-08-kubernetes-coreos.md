@@ -7,7 +7,7 @@ categories:
 tags: 
   - kubernetes
   - coreos
-description: How install Kubernetes on CoreOS.
+description: How to install Kubernetes on CoreOS.
 comments: true
 published: true
 ---

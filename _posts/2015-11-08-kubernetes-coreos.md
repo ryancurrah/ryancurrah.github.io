@@ -50,9 +50,9 @@ The meat of the installation is taken care of by a CoreOS tool called **cloud co
     1. Using coreos-1 VM boot off the ISO image
     2. Download the Master server cloud config yaml file off a webserver (I used github gist)
 
-    ``` python
+    {% highlight bash %}
     sudo wget -O cloud-config.yaml http://git.io/vswiF
-    ```
+    {% endhighlight %}
 
 
     3. Verify your cloud config yaml is valid

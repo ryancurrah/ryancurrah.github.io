@@ -50,21 +50,21 @@ Using coreos-1 VM boot off the ISO image
 Download the Master server cloud config yaml file off a webserver (I used github gist)
 
 {% highlight bash %}
-sudo wget -O cloud-config.yaml http://git.io/vswiF
+core@master ~ $ sudo wget -O cloud-config.yaml http://git.io/vswiF
 {% endhighlight %}
 
 
 Verify your cloud config yaml is valid
 
 {% highlight bash %}
-sudo coreos-cloudinit -validate --from-file cloud-config.yaml
+core@master ~ $ sudo coreos-cloudinit -validate --from-file cloud-config.yaml
 {% endhighlight %}
 
 
 Start the CoreOS install
 
 {% highlight bash %}
-sudo coreos-install -d /dev/sda -c cloud-config.yml
+core@master ~ $ sudo coreos-install -d /dev/sda -c cloud-config.yml
 {% endhighlight %}
 
 Shutdown the VM and remove/detach the CD drive
@@ -92,31 +92,31 @@ You can now start using the **kubectl** client
 ### Bootstrap the first Node server
 Using coreos-2 VM boot off the ISO image
 Download the Node server cloud config yaml file off a webserver (I used github gist)
-    
+
 {% highlight bash %}
-sudo wget -O cloud-config.yaml http://git.io/vswMW
+core@node01 ~ $ sudo wget -O cloud-config.yaml http://git.io/vswMW
 {% endhighlight %}
 
 
 Verify your cloud config yaml is valid
 
 {% highlight bash %}
-sudo coreos-cloudinit -validate --from-file cloud-config.yaml
+core@node01 ~ $ sudo coreos-cloudinit -validate --from-file cloud-config.yaml
 {% endhighlight %}
 
 
 Start the CoreOS install
-    
+
 {% highlight bash %}
-sudo coreos-install -d /dev/sda -c cloud-config.yml
+core@node01 ~ $ sudo coreos-install -d /dev/sda -c cloud-config.yml
 {% endhighlight %}
 
 
 Shutdown the VM and remove/detach the CD drive
 Startup the VM after about 5-10 minutes Kubernetes Master will have been bootstrapped and you should see the following files in /opt/bin
-    
+
 {% highlight bash %}
-core@node01 /etc/systemd/system $ ls -ailh /opt/bin/
+core@node01 ~ $ ls -ailh /opt/bin/
 total 73M
 521218 drwxr-xr-x 2 root root 4.0K Aug 23 04:14 .
 521217 drwxr-xr-x 3 root root 4.0K Aug 23 04:13 ..
@@ -128,12 +128,12 @@ total 73M
 {% endhighlight %}
 
 
-
 You can now start using the **kubectl** client
+
 Try the **kubectl get nodes** command to view joined nodes on the master
 
 {% highlight bash %}
-core@master ~ $ kubectl get nodes
+core@node01 ~ $  kubectl get nodes
 NAME       LABELS                            STATUS
 10.0.2.9   kubernetes.io/hostname=10.0.2.9   Ready
 {% endhighlight %}
@@ -142,31 +142,31 @@ NAME       LABELS                            STATUS
 ### Bootstrap the second Node server
 Using coreos-3 VM boot off the ISO image
 Download the Node server cloud config yaml file off a webserver (I used github gist)
-    
+
 {% highlight bash %}
-sudo wget -O cloud-config.yaml http://git.io/vswQZ
+core@node02 ~ $ sudo wget -O cloud-config.yaml http://git.io/vswQZ
 {% endhighlight %}
 
 
 Verify your cloud config yaml is valid
-    
+
 {% highlight bash %}
-sudo coreos-cloudinit -validate --from-file cloud-config.yaml
+core@node02 ~ $ sudo coreos-cloudinit -validate --from-file cloud-config.yaml
 {% endhighlight %}
-    
+
 
 Start the CoreOS install
 
 {% highlight bash %}
-sudo coreos-install -d /dev/sda -c cloud-config.yml
+core@node02 ~ $ sudo coreos-install -d /dev/sda -c cloud-config.yml
 {% endhighlight %}
 
-    
+
 Shutdown the VM and remove/detach the CD drive
 Startup the VM after about 5-10 minutes Kubernetes Master will have been bootstrapped and you should see the following files in /opt/bin
-    
+
 {% highlight bash %}
-core@node01 /etc/systemd/system $ ls -ailh /opt/bin/
+core@node02 ~ $  ls -ailh /opt/bin/
 total 73M
 521218 drwxr-xr-x 2 root root 4.0K Aug 23 04:14 .
 521217 drwxr-xr-x 3 root root 4.0K Aug 23 04:13 ..
@@ -177,13 +177,13 @@ total 73M
 521219 -rwxr-xr-x 1 root root  209 Aug 23 04:13 wupiao
 {% endhighlight %}
 
-    
+
 You can now start using the **kubectl** client
+
 Try the **kubectl get nodes** command to view joined nodes on the master
-    
-    
+
 {% highlight bash %}
-core@master ~ $ kubectl get nodes
+core@node02 ~ $ kubectl get nodes
 NAME       LABELS                            STATUS
 10.0.2.10   kubernetes.io/hostname=10.0.2.10   Ready
 {% endhighlight %}
@@ -192,31 +192,31 @@ NAME       LABELS                            STATUS
 ### Bootstrap the third Node server
 Using coreos-4 VM boot off the ISO image
 Download the Node server cloud config yaml file off a webserver (I used github gist)
-    
+
 {% highlight bash %}
-sudo wget -O cloud-config.yaml http://git.io/vswQ8
+core@node03 ~ $ sudo wget -O cloud-config.yaml http://git.io/vswQ8
 {% endhighlight %}
-    
-    
+
+
 Verify your cloud config yaml is valid
 
 {% highlight bash %}
-sudo coreos-cloudinit -validate --from-file cloud-config.yaml
+core@node03 ~ $ sudo coreos-cloudinit -validate --from-file cloud-config.yaml
 {% endhighlight %}
 
-    
+
 Start the CoreOS install
 
 {% highlight bash %}
-sudo coreos-install -d /dev/sda -c cloud-config.yml
+core@node03 ~ $ sudo coreos-install -d /dev/sda -c cloud-config.yml
 {% endhighlight %}
 
-    
+
 Shutdown the VM and remove/detach the CD drive
 Startup the VM after about 5-10 minutes Kubernetes Master will have been bootstrapped and you should see the following files in /opt/bin
-    
+
 {% highlight bash %}
-core@node01 /etc/systemd/system $ ls -ailh /opt/bin/
+core@node03 ~ $ ls -ailh /opt/bin/
 total 73M
 521218 drwxr-xr-x 2 root root 4.0K Aug 23 04:14 .
 521217 drwxr-xr-x 3 root root 4.0K Aug 23 04:13 ..
@@ -227,12 +227,13 @@ total 73M
 521219 -rwxr-xr-x 1 root root  209 Aug 23 04:13 wupiao
 {% endhighlight %}
 
-    
+
 You can now start using the **kubectl** client
+
 Try the **kubectl get nodes** command to view joined nodes on the master         
-    
+
 {% highlight bash %}
-core@master ~ $ kubectl get nodes
+core@node03 ~ $ kubectl get nodes
 NAME       LABELS                            STATUS
 10.0.2.9   kubernetes.io/hostname=10.0.2.9   Ready
 10.0.2.10   kubernetes.io/hostname=10.0.2.10   Ready

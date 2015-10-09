@@ -2,15 +2,16 @@
 layout: post
 title: CoreOS w/ Kubernetes Install Guide for VirtualBox
 categories: 
-- containers
-- tech
+  - containers
+  - tech
 tags: 
-- kubernetes
-- coreos
+  - kubernetes
+  - coreos
 description: How install Kubernetes on CoreOS.
 comments: true
 published: true
 ---
+
 
 
 ## This guide will introduce you to bootstrapping a Kubernetes cluster on CoreOS with VirtualBox.

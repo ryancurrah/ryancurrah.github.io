@@ -130,6 +130,7 @@ total 73M
 {% endhighlight %}
 
 
+
 You can now start using the **kubectl** client
 Try the **kubectl get nodes** command to view joined nodes on the master
 

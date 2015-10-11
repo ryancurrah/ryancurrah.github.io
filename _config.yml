@@ -8,22 +8,14 @@ markdown: kramdown
 disqus: ryancurrah # disqus short name
 author: Ryan Currah
 timezone: America/Toronto
-google_analytics_tracking_id: 'UA-19684977-2'
+google_analytics_id: UA-19684977-2
 
-analytics :
-  provider : google
-  google : 
-      tracking_id : 'UA-19684977-2'
-
-#kramdown:
-#  input: GFM
-
-defaults:
-  -
-    scope:
-      path: "" # empty string for all files
-    values:
-      title: Ryan Currah
+#defaults:
+#  -
+#    scope:
+#      path: "" # empty string for all files
+#    values:
+#      title: Ryan Currah
 
 description: Cloud and DevOps Engineering Blog
 

@@ -10,6 +10,9 @@ author: Ryan Currah
 timezone: America/Toronto
 google_analytics: UA-19684977-1 
 
+gems:
+  - jekyll-sitemap
+
 #defaults:
 #  -
 #    scope:
@@ -34,4 +37,3 @@ categories_path: categories.html
 tags_path: tags.html
 
 BASE_PATH:
-

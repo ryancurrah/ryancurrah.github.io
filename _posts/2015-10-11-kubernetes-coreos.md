@@ -20,7 +20,7 @@ I know Fabric isnt a new project but I wanted to write about batching remote exe
 to Fabric is because SaltStack remote execution has been unreliable lately. It took a few tries but eventually I was 
 able to get it right. Theres a couple things to consider when running executions against a large set of hosts.
 
-1. Unexpcted prompts
+1. Unexpected prompts
 2. Sudo
 3. Parallel executions
 4. Batching executions

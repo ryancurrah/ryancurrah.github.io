@@ -25,7 +25,7 @@ able to get it right. Theres a couple things to consider when running executions
 5. Skipping unresponsive hosts
 
 
-**Prompts** - When running an execution there is a chance you may get an unexpected prompted, instead of hanging the execution Fabric has an option to exit on prompts. <http://docs.fabfile.org/en/latest/usage/env.html#abort-on-prompts>
+**Unexpected Prompts** - When running an execution there is a chance you may get an unexpected prompted, instead of hanging the execution Fabric has an option to exit on prompts. <http://docs.fabfile.org/en/latest/usage/env.html#abort-on-prompts>
 
 **Sudo** - Automatically entering passwords using sudo there is an option. <http://docs.fabfile.org/en/latest/api/core/operations.html#fabric.operations.sudo>
 

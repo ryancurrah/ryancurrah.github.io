@@ -62,8 +62,8 @@ host7
 from fabric.api import *
 
 
-def set_hosts():
-    env.hosts = open('hosts.txt', 'r').read().split()
+def set_hosts(file_name):
+    env.hosts = open(file_name, 'r').read().split()
 
 
 def state_sls(state):
@@ -75,5 +75,5 @@ def state_sls(state):
 ### Fab command
 
 {% highlight bash %}
-(env)ryan@ryan:/srv/fabric$ fab -ka -f statesls_fabfile.py -u ryancurrah -I --abort-on-prompts --skip-bad-hosts -P -z 4 set_hosts state_sls:timezone.conf
+(env)ryan@ryan:/srv/fabric$ fab -ka -f statesls_fabfile.py -u ryancurrah -I --abort-on-prompts --skip-bad-hosts -P -z 4 set_hosts:hosts.txt state_sls:timezone.conf
 {% endhighlight %}

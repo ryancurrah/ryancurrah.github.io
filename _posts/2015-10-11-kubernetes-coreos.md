@@ -14,10 +14,10 @@ comments: true
 published: true
 ---
 
-## Batching SSH Remote Execution with Fabric
+## Batching Remote Executions with Fabric in Parallel
 
 I know Fabric isnt a new project but I wanted to write about batching remote executions. The reason why I resorted 
-to Fabric is because SaltStack remote execution has been unreliable for us. It took a few tries but eventually I was 
+to Fabric is because SaltStack remote execution has been unreliable lately. It took a few tries but eventually I was 
 able to get it right. Theres a couple things to consider when running executions against a large set of hosts.
 
 1. Unexpcted prompts

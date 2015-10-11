@@ -38,22 +38,28 @@ able to get it right. Theres a couple things to consider when running executions
 **Skipping unresponsive hosts** - If a host is unrepsonive you may want to skip it. <http://docs.fabfile.org/en/latest/usage/env.html#skip-bad-hosts>
 
 
+### Install Fabric
+{% highlight bash %}
+(env)ryan@ryan:/srv/fabric$ pip install fabric
+{% endhighlight %}
+
+
 ### Create a hosts file
-**hosts.txt**
-{% highlight python %}
+**.\hosts.txt**
+{% highlight bash %}
 host1
 host2
 host3
 host4
 host5
-host5
-host5
+host6
+host7
 {% endhighlight %}
 
 
-### Example Fabfile
+### Fab file
 
-**statesls_fabfile.py**
+**.\statesls_fabfile.py**
 {% highlight python %}
 from fabric.api import *
 
@@ -62,7 +68,14 @@ def set_hosts():
     env.hosts = open('hosts.txt', 'r').read().split()
 
 
-def commvault_join():
-    sudo('sudo salt-call state.sls commvault.join')
+def state_sls(state):
+    sudo('salt-call state.sls {0}'.format(state))
 
+{% endhighlight %}
+
+
+### Fab command
+
+{% highlight bash %}
+(env)ryan@ryan:/srv/fabric$ fab -ka -f statesls_fabfile.py -u ryancurrah -I --abort-on-prompts --skip-bad-hosts -P -z 4 set_hosts state_sls:timezone.conf
 {% endhighlight %}

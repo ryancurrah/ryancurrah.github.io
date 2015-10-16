@@ -12,6 +12,10 @@ google_analytics: UA-19684977-1
 
 gems:
   - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: atom.xml
 
 #defaults:
 #  -

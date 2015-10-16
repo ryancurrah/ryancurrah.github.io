@@ -1,4 +1,4 @@
-# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+# Visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
 
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
@@ -9,6 +9,9 @@ disqus: ryancurrah # disqus short name
 author: Ryan Currah
 timezone: America/Toronto
 google_analytics: UA-19684977-1 
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
 
 gems:
   - jekyll-sitemap
@@ -16,13 +19,6 @@ gems:
 
 feed:
   path: atom.xml
-
-#defaults:
-#  -
-#    scope:
-#      path: "" # empty string for all files
-#    values:
-#      title: Ryan Currah
 
 description: Cloud and DevOps Engineering Blog
 
@@ -36,8 +32,5 @@ author:
   bio: An ordinary person trying to do some extraordinary things with technology.
   email_md5: 6341f19683b09ee9170941ca8dae5f17
 
-rss_path: feed.xml
-categories_path: categories.html
-tags_path: tags.html
-
 BASE_PATH:
+

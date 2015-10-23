@@ -13,8 +13,7 @@ published: true
 
 If you ever merged a changed that breaks something or just need undo a merge the following will show you how to revert the merge and also undo the revert so you can re-introduce thoose changes at a later time.
 
-Make sure your on the branch that you want to revert the merge on
-Choose the merge commit you want to revert in this case its... ddbc8324fb9b48ec1458b225dsd5b7510975df6a8
+Make sure your on the branch that you want to revert the merge on, choose the merge commit you want to revert in this case its... ddbc8324fb9b48ec1458b225dsd5b7510975df6a8
 
 {% highlight bash %}
 ryan@ryan$ git log

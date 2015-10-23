@@ -16,6 +16,7 @@ published: true
 As with almost every object in Splunk, field extractions have permissions. If you are creating awesome field extractions to make searching easier don't forget to modify the permissions afterwards or other people won't be able to benifit from your work.
 
 On the Splunk Search Head go to:
+
 1. **Settings**
 2. **Fields**
 3. **Field Extractions**

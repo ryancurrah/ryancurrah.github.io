@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Git - Reset Merge
+title: Revert A Merge In Git
 categories: 
   - git
   - tech
 tags: 
   - git
-description: How to reset a merge in git.
+description: How to revert a merge in git.
 comments: true
 published: true
 ---

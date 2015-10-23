@@ -45,7 +45,7 @@ Date:   Fri Oct 23 09:49:56 2015 -0400
 {% endhighlight %}
 
 
-Revert to the bad merge. 
+Revert the bad merge using the commit hash of the bad merge
 
 {% highlight bash %}
 ryan@ryan$ git revert -m 1 ddbc8324fb9b48ec1458b225dsd5b7510975df6a8

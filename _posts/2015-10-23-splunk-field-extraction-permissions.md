@@ -20,7 +20,7 @@ On the Splunk search head go to:
 1. **Settings**
 2. **Fields**
 3. **Field Extractions**
-4. On the very right hand side find **Permissions**
+4. On the very right hand side click on **Permissions**
 5. In **Object should appear in** select **All apps**
 6. Under **Permissions** select **Everyone** under **Read**
 

@@ -11,9 +11,10 @@ comments: true
 published: true
 ---
 
-### Note: To do this you need to be able to force push to the remote in some systems like Stash it may be disabled
+If you ever merged a changed that breaks something or just need undo a merge the following will show you how to do revert the merge and also undo the revert so you can re-introduce thoose changes at a later time.
 
-Choose your last working commit not in the merge for this case it is the merge 9asd3klb237876e9013b7dade79d8cbsad3gj76es.
+Make sure your on the branch that you want to revert the merge on
+Choose the merge commit you want to revert in this case its... ddbc8324fb9b48ec1458b225dsd5b7510975df6a8
 
 {% highlight bash %}
 ryan@ryan$ git log
@@ -45,18 +46,26 @@ Date:   Fri Oct 23 09:49:56 2015 -0400
 {% endhighlight %}
 
 
-Reset head to the last good merge using the commit hash shown in git log
+Revert to the bad merge. 
 
 {% highlight bash %}
-ryan@ryan$ git reset --hard 9asd3klb237876e9013b7dade79d8cbsad3gj76es
+ryan@ryan$ git revert -m 1 ddbc8324fb9b48ec1458b225dsd5b7510975df6a8
 {% endhighlight %}
 
 
-Now force push your changes from the local HEAD to the remote origin
+Now push your changes to the remote origin
 
 {% highlight bash %}
-ryan@ryan$ git push origin HEAD --force
+ryan@ryan$ git push origin develop
+{% endhighlight %}
+
+When you want to re-intorduce thoose changes you will need to revert the revert
+
+{% highlight bash %}
+ryan@ryan$ git revert 88edd6d
 {% endhighlight %}
 
 
-And your done....
+## Sources
+- https://git-scm.com/blog/2010/03/02/undoing-merges.html
+

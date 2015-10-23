@@ -8,7 +8,7 @@ tags:
   - fieldextractions
   - permissions
   - splunk
-description: Teachable moment: Splunk field extractions have permissions!
+description: Teachable moment Splunk field extractions have permissions!
 comments: true
 published: true
 ---

@@ -20,7 +20,7 @@ The solution I implemented is to allow the developers to present those configura
 
 Below illustrates how item 1 and 2 can be implemented. 
 
-## Example Pillars definitions for shared services that states can utilize
+## Example Pillar definitions for shared services that states can utilize
 
 **pillar/top.sls**
 
@@ -49,7 +49,6 @@ apache:
   firewall:
     ...    
 {% endhighlight %}
-
 
 It does clutter up the pillars a bit but what it does allow us to do is to find these configurations by looping through the pillar data structure and implement them all in the same way. It also allows us to audit the different rules and checks in place because we know every configuration item will be under a predefined name 'sensu_checks', 'splunk_monitors'.
 

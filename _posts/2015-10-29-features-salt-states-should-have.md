@@ -54,7 +54,7 @@ It does clutter up the pillars a bit but what it does allow us to do is to find 
 
 ## Example shared service configuration file
 
-splunkforwarder/files/inputs.conf
+**splunkforwarder/files/inputs.conf**
 
 {% highlight yaml %}
 {% raw %}

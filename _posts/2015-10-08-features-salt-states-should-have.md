@@ -25,10 +25,12 @@ Below illustrates how item 1 and 2 can be implemented.
 **pillar/top.sls**
 
 {% highlight yaml %}
+{% raw %}
 ...
 'G@roles:apache':
   - match: compound
   - apache
+{% endraw %}
 {% endhighlight %}
 
 **pillar/apache.sls**
@@ -56,6 +58,7 @@ It does clutter up the pillars a bit but what it does allow us to do is to find 
 splunkforwarder/files/inputs.conf
 
 {% highlight yaml %}
+{% raw %}
 {%- for pillar_key, data in pillar.iteritems() -%}
 {%- for monitor in salt['pillar.get']('%s:splunk_monitors'|format(pillar_key), {}) -%}
 [monitor://{{ monitor.name }}]
@@ -64,4 +67,5 @@ splunkforwarder/files/inputs.conf
 {% endfor %}
 {% endfor -%}
 {%- endfor -%}
+{% endraw %}
 {% endhighlight %}

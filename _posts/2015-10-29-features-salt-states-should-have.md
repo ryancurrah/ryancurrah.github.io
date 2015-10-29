@@ -12,7 +12,7 @@ published: true
 ---
 
 One thing I have learned over the year of managing a Salt code base is to make sure you provide your salt developers a good framework for implementing monitoring, log aggregation and tests along with there states.
-The solution I implemented is to allow the developers to present those configurations in the pillars as shown in the example below. This allows you to enforce certain items that must present when a new state is requested to be merged into your code base. Some basic things that I would suggest that must be implemented with new states are...
+The solution I implemented is to allow the developers to present those configurations in the pillars as shown in the example below. This allows you to enforce that these configs must be must present when a new state is requested to be merged into your code base. Some basic things that I would suggest that must be implemented with new states are...
 
 1. Monitoring configs
 2. Log aggregation configs
@@ -69,3 +69,5 @@ splunkforwarder/files/inputs.conf
 {%- endfor -%}
 {% endraw %}
 {% endhighlight %}
+
+As for tests thats a post for another time!

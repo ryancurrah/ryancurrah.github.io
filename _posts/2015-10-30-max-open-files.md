@@ -13,7 +13,7 @@ published: true
 
 One thing that is normally looked over when configuring a virtual machine for a service like RabbitMQ or SaltStack is the max open files limits. The nature in which these services operate with a high ammount of open sockets we got to make sure the max open files limit is suffcient.
 
-If you want to see what your services process limits are you can cat out the /proc/<<pid>>/limits file.
+If you want to see what your services process limits are you can cat out the /proc/**pid**/limits file.
 
 Make sure you know whjat your virtual machines maximum number of open files is to make sure you don't over allocate open files to the rabbitmq or salt-master processes. If you do and thoose services hit the max you won't be able to instatiate a pam session to login to box.
 

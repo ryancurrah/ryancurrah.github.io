@@ -26,7 +26,7 @@ If you want to start getting an idea of the success of salt state results in you
     "name": "SplunkForwarder",
     "start_time": "19:30:37.613000",
     "minion_id": "server01",
-    "fun": "state.highstate",
+    "fun": "state.sls",
     "result": false,
     "state_id": "splunkforwarder",
     "duration": 199.0,

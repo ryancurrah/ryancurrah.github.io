@@ -42,7 +42,7 @@ You get some interesting fields here, the first one is the **result** field. Thi
 
 With this level of detail being captured by your log aggregator you can create some pretty nifty dashboards. For example a simple Fail/Success gauge and a table of top 20 failed states.
 
-![Splunk SaltState Dashboard]({{ site.url }}/images/salt-events-splunk.png.jpg =100x20)
+![Splunk SaltState Dashboard](/images/salt-events-splunk.png)
 
 ## How the State Event Returner Works
 
@@ -50,7 +50,7 @@ When the salt-minions run a state they create a job the job has an **ID** and **
 
 ## Setting Up the TCP Returner Module
 
-There a few steps to set this up...
+There are a few steps to set this up...
 
 1. Enable TCP capture on your log aggregation tool
 2. Install tcp_returner.py returner module to your salt-masters

@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Features Salt States Should Have
-categories: 
+categories:
   - saltstack
-tags: 
+tags:
   - saltstack
   - features
 description: What salt states should include to be considered a mergable feature.
@@ -11,14 +11,17 @@ comments: true
 published: true
 ---
 
-One thing I have learned over the year of managing a Salt code base is to make sure you provide your salt developers a good framework for implementing monitoring, log aggregation and tests along with there states.
-The solution I implemented is to allow the developers to present those configurations in the pillars as shown in the example below. This allows you to enforce that these configs must be must present when a new state is requested to be merged into your code base. Some basic things that I would suggest that must be implemented with new states are...
+One thing I have learned over the year of managing a Salt code base is to make sure you provide your salt developers a good framework for implementing monitoring, log aggregation and tests along with their states.
+
+The solution I implemented is to allow the developers to present those configurations in the pillars as shown in the example below.
+
+Potentially you should enforce that these items be present when a new state is created. Some basic things that I would suggest that should be implemented with new states are...
 
 1. Monitoring configs
 2. Log aggregation configs
 3. Tests
 
-Below illustrates how item 1 and 2 can be implemented. 
+Below illustrates how item 1 and 2 can be implemented.
 
 ## Example Pillar definitions for shared services that states can utilize
 

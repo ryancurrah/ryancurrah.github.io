@@ -1,10 +1,9 @@
 ---
 layout: post
 title: CoreOS w/ Kubernetes Install Guide for VirtualBox
-categories: 
-  - containers
+categories:
   - tech
-tags: 
+tags:
   - kubernetes
   - coreos
 description: How to install Kubernetes on CoreOS.
@@ -34,7 +33,7 @@ Create 4 VMs with the following instructions
   - x2 NICS, One set as host-only (For internal/private cluster communication) and the other set as NAT (For internet access)
 
 
-> Note: 
+> Note:
 > NAT can have any network address just make sure DHCP is on
 
 Host-only network info must be as follows

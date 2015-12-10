@@ -1,10 +1,9 @@
 ---
 layout: post
 title: Splunk Field Extraction Permissions
-categories: 
-  - splunk
+categories:
   - tech
-tags: 
+tags:
   - fieldextractions
   - permissions
   - splunk
@@ -26,4 +25,3 @@ On the Splunk search head go to:
 
 ## Sources
 - https://answers.splunk.com/answers/71353/search-returned-no-results.html
-

@@ -2,7 +2,7 @@
 layout: post
 title: Features Salt States Should Have
 categories:
-  - saltstack
+  - tech
 tags:
   - saltstack
   - features

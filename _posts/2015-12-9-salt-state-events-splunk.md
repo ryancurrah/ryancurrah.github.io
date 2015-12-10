@@ -115,4 +115,4 @@ service salt-master restart
 
 If all is good you can view state events starting to appear in your log aggregation tool. Or you can manually generate some events by running a state. If not run the salt-master in debug mode and check that the returner is running correctly by looking at the salt-master log.
 
-Well hope this helps some of you to do some analytics on your states in your environment. If you have any questions let me know!
+Well I hope this helps some of you to do some analytics on your states in your environment. If you have any questions let me know!

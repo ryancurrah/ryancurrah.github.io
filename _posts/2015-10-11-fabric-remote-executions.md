@@ -1,10 +1,9 @@
 ---
 layout: post
 title: Batching Remote Executions with Fabric in Parallel
-categories: 
-  - sysadmin
+categories:
   - tech
-tags: 
+tags:
   - fabric
   - python
   - ssh
@@ -14,8 +13,8 @@ comments: true
 published: true
 ---
 
-I know Fabric isnt a new project but I wanted to write about batching remote executions. The reason why I resorted 
-to Fabric is because SaltStack remote execution has been unreliable lately. It took a few tries but eventually I was 
+I know Fabric isnt a new project but I wanted to write about batching remote executions. The reason why I resorted
+to Fabric is because SaltStack remote execution has been unreliable lately. It took a few tries but eventually I was
 able to get it right. Theres a couple things to consider when running executions against a large set of hosts.
 
 1. Unexpected prompts

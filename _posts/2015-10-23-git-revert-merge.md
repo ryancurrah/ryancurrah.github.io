@@ -1,10 +1,9 @@
 ---
 layout: post
 title: Revert A Merge In Git
-categories: 
-  - git
+categories:
   - tech
-tags: 
+tags:
   - git
 description: How to revert a merge in git.
 comments: true
@@ -23,7 +22,7 @@ Author: Ryan Currah <ryan@currah.ca>
 Date:   Fri Oct 23 10:03:32 2015 -0400
 
     Merge pull request #3 in salt from bugfix/testing-roll-back-plan to develop
-    
+
     * commit 'ac2ff464fb07febda8a4cccf2b74c15ad4f12492':
       added some failing change
 
@@ -39,7 +38,7 @@ Author: Ryan Currah <ryan@currah.ca>
 Date:   Fri Oct 23 09:49:56 2015 -0400
 
     Merge pull request #2 in salt from bugfix/some-working-change to develop
-    
+
     * commit 'cd303a8bc0706822ef7ff98279cb70e6c9bfb758':
       some working change
 {% endhighlight %}
@@ -67,4 +66,3 @@ ryan@ryan$ git revert 88edd6d
 
 ## Sources
 - https://git-scm.com/blog/2010/03/02/undoing-merges.html
-
